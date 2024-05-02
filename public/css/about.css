@@ -1,0 +1,619 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* the header section of the page */
+section {
+    background-image: url(../images/breadcrumb-bg.jpg);
+    width: 100%;
+    background-size: cover;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 36, 63, 0.7);
+}
+
+/* the header part of header section */
+#logo {
+    width: 130px;
+    height: 60px;
+}
+
+header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding-top: 30px;
+    justify-content: space-around;
+    justify-content: space-between;
+    height: 16%;
+    background-color: black;
+}
+
+header a {
+    padding-top: 0px;
+    margin-left: 60px;
+    margin-top: -18px;
+}
+
+.options {
+    width: 100%;
+    align-items: center;
+}
+
+.options a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 200;
+}
+
+.options a:hover {
+    color: rgb(255, 165, 0);
+}
+
+header div a i {
+    display: inline-block;
+    color: white;
+    padding-left: 40px;
+    margin-right: 120px;
+
+}
+
+header div a i:hover {
+    color: #F28123;
+}
+
+/* end of header part of header section */
+/* the hompage content of header section */
+.Homepage {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 200px;
+    text-align: center;
+}
+
+.Homepage h2 {
+    color: #fff;
+    font-size: 64px;
+    font-weight: 800;
+    font-style: initial;
+    line-height: 1.3;
+    margin: 0 0 1.25rem 0;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+.Homepage h3 {
+    display: inline-block;
+    color: chocolate;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/* end of hompage content of header section */
+/* end of header section of the page */
+/* Why Fruitkha Section */
+.WhyFruitkha {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 120px;
+}
+
+.h2_text {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.25rem;
+    padding-bottom: 1rem
+}
+
+.orange-text {
+    color: #F28123;
+}
+
+.row {
+    display: flex;
+    width: 50%;
+    margin-top: 30px;
+    padding-right: 75px;
+}
+
+.list_box {
+    margin-bottom: 3rem;
+    letter-spacing: 0.5px;
+}
+
+.list_box i {
+    display: block;
+    font-size: 24px;
+    margin-right: 15px;
+    color: #F28123;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    line-height: 60px;
+    border: 2px #F28123 dotted;
+    border-radius: 999px;
+    margin-left: 20px;
+}
+
+.content {
+    display: inline-block;
+    margin-left: 120px;
+    margin-top: -50px;
+}
+
+.content h3 {
+    display: block;
+    line-height: 22px;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.content p {
+    margin-bottom: 0px;
+    opacity: 0.75;
+    width: 140px;
+}
+
+.featured-text {
+    margin-left: 120px;
+}
+
+.WhyFruitkha_image img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-top-left-radius: 5px;
+    box-shadow: 0 0 20px #cacaca;
+    border-bottom-left-radius: 5px;
+}
+
+/* End of the why frutikha section */
+
+/* sale section */
+.salesection {
+    width: 100%;
+    height: 500px;
+    background-image: url(../images/1.jpg);
+    background-size: cover;
+    margin-top: 100px;
+    position: relative;
+}
+
+.salesection button {
+    width: 150px;
+    margin-top: 25px;
+    height: 45px;
+    border-radius: 30px;
+    background-color: #F28123;
+    border: none;
+}
+
+.salesection button:hover {
+    background-color: #36176b;
+}
+
+.salesection button a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.salesection .p1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.salesection .p1 span {
+    color: #F28123;
+}
+
+.salesection .cont2 {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+}
+
+.salesection .cont2 .p2 {
+    font-size: 35px;
+}
+
+.salesection .cont2 .p3 {
+    font-size: 35px;
+}
+
+.salesection .cont2 .p3 span {
+    font-size: 70px;
+    font-weight: bold;
+    margin-left: 13px;
+    color: #F28123;
+}
+
+.salesection .cont1 {
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 130px;
+}
+
+/* end of sale section */
+/*  our team section */
+/* all_ourteam header section */
+.ourteam_header {
+    margin-top: 100px;
+}
+
+.ourteam {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.ourteam::after {
+
+    position: absolute;
+    content: '';
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 70px;
+    height: 2px;
+    background-color: #F28123;
+    margin: -4px auto;
+}
+
+h1.ourteam {
+    text-align: center;
+    font-style: oblique;
+    color: black;
+    font-size: 45px
+}
+
+.our {
+    color: #F28123;
+}
+
+#p1 {
+    text-align: center;
+    font-size: 20px;
+    width: 530px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    color: #555;
+    padding-top: 24px;
+}
+
+/* the row part */
+.row {
+display: flex;
+justify-content: space-between;
+width: 100%;
+}
+
+.team-item {
+    width: 40%;
+    position: relative;
+    margin-left: 30px;
+    margin-right: 40px;
+}
+
+.team-bg {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+
+.team-bg-1 {
+    background-image: url(../images/team-1.jpg);
+}
+.team-bg-2 {
+    background-image: url(../images/team-2.jpg);
+}
+.team-bg-3 {
+    background-image: url(../images/team-3.jpg);
+}
+.team-item h4 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.team-item h4 span {
+    font-size: 70%;
+    display: block;
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
+ul.social-link {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+ul.social-link li {
+    display: inline-block;
+}
+
+ul.social-link li a {
+    color: #fff;
+    background-color: #F28123;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    display: block;
+    margin: 5px;
+}
+/* end of row part */
+/* end of all_ourteam header section  */
+
+/*  the local shop owner  */
+.owner {
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 37px;
+    margin-bottom: 47px;
+}
+
+.owner img {
+    width: 120px;
+    border-radius: 60px;
+}
+
+.owner .prag {
+    font-style: italic;
+    font-size: 20px;
+    width: 700px;
+    text-align: center;
+    color: #999999;
+}
+
+.owner h3 {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    opacity: 0.6;
+}
+
+.owner h2 {
+    margin-top: 15px;
+}
+
+.owner i {
+    margin-top: 20px;
+    font-size: 40px;
+    opacity: 0.3;
+}
+
+/* end of  the local shop owner  */
+/* the footer section */
+.foot {
+    height: 300px;
+    background-color: #051922;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0;
+}
+.about h2{
+    font-size: 24px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 20px;
+    color: #fff;   
+}
+.about_h2::after{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background-color: #F28123;
+        content: "";
+}
+.about3 h2 {
+    font-size: 24px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 20px;
+    color: #fff;
+}
+.about2 h2::after{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #F28123;
+    content: "";
+}
+.about2 h2 {
+font-size: 24px;
+font-weight: 500;
+position: relative;
+padding-bottom: 20px;
+color: #fff;
+}
+.about3 h2::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 20px;
+    height: 2px;
+    background-color: #F28123;
+    content: "";
+}
+.about4 h2::after{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #F28123;
+    content: "";
+}
+.about4 h2 {
+font-size: 24px;
+font-weight: 500;
+position: relative;
+padding-bottom: 20px;
+color: #fff;
+}
+.about {
+    margin-top: 30px;
+    margin-left: 60px;
+    width: 30%;
+}
+
+.inabout {
+    color: #766e65;
+    margin-top: 14px;
+    width: 60%;
+}
+
+.about2 {
+    margin-top: 30px;
+    width: 45%;
+    margin-left: 22px;
+
+}
+
+.inabout2 {
+    color: #766e65;
+    margin-top: 14px;
+    width: 30%;
+}
+
+.about3 {
+    margin-top: 30px;
+    width: 30%;
+    margin-left: 22px;
+}
+
+.inabout3 {
+    color: #766e65;
+    margin-top: 14px;
+}
+
+.about4 {
+    margin-top: 30px;
+    width: 40%;
+
+}
+
+.inabout4 {
+    color: #766e65;
+    margin-top: 14px;
+}
+
+.about3>ul {
+    list-style: none;
+    margin-left: 1px;
+    padding: 0;
+    margin-top: 11px;
+}
+
+.about3 li {
+    padding-top: 11px;
+}
+
+.about3 li a:hover {
+    color: #f37106;
+}
+
+.about3 li a {
+    color: azure;
+    text-decoration: none;
+    margin-left: 0;
+    padding-left: 0;
+
+
+}
+
+.about3>ul i {
+    color: #f37106;
+    padding-right: 10px;
+}
+
+.about4 input {
+    background-color: #23043b;
+    color: azure;
+    height: 40px;
+    margin-top: 14px;
+}
+
+.about4 button {
+    background-color: #23043b;
+    color: azure;
+    height: 40px;
+    width: 50px;
+    margin-top: 14px;
+}
+
+.about4 button:hover {
+    background-color: #F28123;
+}
+
+hr {
+    margin: 0;
+    margin-left: 10px;
+    background-color: #181817;
+}
+
+div.fin {
+    color: white;
+    background-color: #051922;
+    margin-left: 10px;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.infin {
+    margin-left: 63px;
+    padding-top: 55px;
+}
+
+.fin span {
+    padding-top: 22px;
+    padding-bottom: 22px;
+
+}
+
+.fin div i {
+    margin-top: 15px;
+    padding: 4px;
+}
+
+.fin div i:hover {
+    color: #f37106;
+}
+/* end of footer section */
