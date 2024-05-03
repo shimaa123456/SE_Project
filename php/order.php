@@ -14,20 +14,19 @@
     <section>
         <div class="header">
             <header>
-                <a href="../php/home.php" class="logo"><img src="../public/images/logo.png" alt="fruit logo"
-                        id="logo"></a>
+                <a href="home.php" class="logo"><img src="../public/images/logo.png" alt="fruit logo" id="logo"></a>
                 <nav class="options">
-                    <a href="../php/home.php" style="color: orange">Home</a>
-                    <a href="../php/about.php">About</a>
-                    <a href="../php/contact_insert.php">Contact</a>
-                    <a href="../php/shop.php">Shop</a>
-                    <a href="../php/news.php">News</a>
+                    <a href="home.php"> Home</a>
+                    <a href="about.php">About</a>
+                    <a href="contact_insert.php">Contact</a>
+                    <a href="shop.php">Shop</a>
+                    <a href="news.php">News</a>
                 </nav>
                 <div>
-                    <a href="../php/order.php"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="order.php"><i class="fas fa-shopping-cart" style="color: orange"></i></a>
                 </div>
                 <div>
-                    <a href="../php/login.php"><i class="fas fa-sign-in-alt"></i></a>
+                    <a href="login.php"><i class="fas fa-sign-in-alt"></i></a>
 
                 </div>
             </header>
@@ -44,9 +43,28 @@
     <!-- end of the header of the page -->
     <!-- the body section -->
     <div class="body">
+        <?php
+        require_once 'fruitkha_connect.php';
+        session_start();
 
+        if (!isset($_SESSION['user_id'])) {
+            echo "<script>alert('Please login first to view your cart.');</script>";
+        } else {
+            try {
+                $pdo = new PDO($attr, $user, $pass, $opts);
+            } catch (PDOException $e) {
+                throw new PDOException($e->getMessage(), (int)$e->getCode());
+            }
+            $user_id = $_SESSION['user_id'];
+            $query = "SELECT * FROM cart WHERE user_id = ?";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$user_id]);
+
+            if ($stmt->rowCount() == 0) {
+                echo "<script>alert('Your cart is empty.');</script>";
+            }
+        ?>
         <div class="row">
-
             <div class="col1">
                 <table class="cart-table">
                     <thead class="cart-table-head">
@@ -61,28 +79,20 @@
                     </thead>
                     <tbody>
                         <?php
-                            require_once 'fruitkha_connect.php';
-                            try {
-                                $pdo = new PDO($attr, $user, $pass, $opts);
-                            } catch (PDOException $e) {
-                                throw new PDOException($e->getMessage(), (int)$e->getCode());
-                            }
-                            $query = "SELECT * FROM cart";
-                            $result = $pdo->query($query);
-                            while ($row = $result->fetch()) {
-                                $image = htmlspecialchars($row['image']);
-                                $name = htmlspecialchars($row['name']);
-                                $price = htmlspecialchars($row['price']);
-                                echo "<tr class='table-body-row'>";
-                                echo "<td class='product-remove'><a href='sqltest.php?delete=true&name=$name'><i class='far fa-window-close'></i></a></td>";
-                                echo "<td class='product-image'><img src='$image' alt='$name' width='100' height='100'></td>";
-                                echo "<td class='product-name'>$name</td>";
-                                echo "<td class='product-price'>$price</td>";
-                                echo "<td class='product-quantity'><input type='number' placeholder='0' name='quantity' value='1'></td>";
-                                echo "<td class='product-total'>$price</td>";
-                                echo "</tr>";
-                            }
-                            ?>
+                        while ($row = $stmt->fetch()) {
+                            $image = htmlspecialchars($row['image']);
+                            $name = htmlspecialchars($row['name']);
+                            $price = htmlspecialchars($row['price']);
+                            echo "<tr class='table-body-row'>";
+                            echo "<td class='product-remove'><a href='javascript:void(0);' onclick='removeItem(\"$name\")'><i class='far fa-window-close'></i></a></td>";
+                            echo "<td class='product-image'><img src='$image' alt='$name' width='100' height='100'></td>";
+                            echo "<td class='product-name'>$name</td>";
+                            echo "<td class='product-price'>$price</td>";
+                            echo "<td class='product-quantity'><input type='number' placeholder='0' name='quantity' value='1'></td>";
+                            echo "<td class='product-total'>$price</td>";
+                            echo "</tr>";
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -130,7 +140,9 @@
                 </div>
             </div>
         </div>
-
+        <?php
+        }
+        ?>
     </div>
     <!-- end of the body section -->
     <!-- banner section -->
@@ -163,11 +175,11 @@
 
             <ul>
 
-                <li> <a href="home.html"><i class="fas fa-angle-right"></i>Home</a></li>
-                <li> <a href="about.html"> <i class="fas fa-angle-right"></i>About</a></li>
-                <li> <a href="shop.html"><i class="fas fa-angle-right"></i>Shop</a></li>
-                <li> <a href="news.html"><i class="fas fa-angle-right"></i>News</a></li>
-                <li> <a href="contact.html"><i class="fas fa-angle-right"></i>Contact</a></li>
+                <li> <a href="home.php"><i class="fas fa-angle-right"></i>Home</a></li>
+                <li> <a href="about.php"> <i class="fas fa-angle-right"></i>About</a></li>
+                <li> <a href="shop.php"><i class="fas fa-angle-right"></i>Shop</a></li>
+                <li> <a href="news.php"><i class="fas fa-angle-right"></i>News</a></li>
+                <li> <a href="contact_insert.php"><i class="fas fa-angle-right"></i>Contact</a></li>
             </ul>
 
 
@@ -191,7 +203,49 @@
         </div>
     </div>
     <!-- end of footer section -->
-    <script src="../public/javascript/order.js"></script>
+
+    <script>
+    document.getElementById("update_cart").onclick = update;
+
+    function update() {
+        var tableRows = document.querySelectorAll(".table-body-row");
+
+        var subtotal = 0;
+
+        tableRows.forEach(function(row) {
+            var quantityInput = row.querySelector(".product-quantity input");
+            var priceElement = row.querySelector(".product-price");
+
+            var quantity = parseInt(quantityInput.value);
+            var price = parseInt(priceElement.textContent);
+
+            var total = quantity * price;
+
+            row.querySelector(".product-total").textContent = "$" + total;
+
+            subtotal += total;
+        });
+        document.getElementById("subtotal").textContent = "$" + subtotal;
+        var total = subtotal + 45;
+        document.getElementById("total").textContent = "$" + total;
+    }
+
+    function removeItem(name) {
+        if (confirm("Are you sure you want to remove this item?")) {
+            fetch('delete_item.php?name=' + name)
+                .then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        console.error('Error deleting item');
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                });
+        }
+    }
+    </script>
 </body>
 
 </html>

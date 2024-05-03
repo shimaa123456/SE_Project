@@ -1,8 +1,8 @@
 <?php // login.php
-$host = 'localhost'; // Change as necessary
-$data = 'fruitkha'; // Change as necessary
-$user = 'root'; // Change as necessary
-$pass = ''; // Change as necessary
+$host = 'localhost'; 
+$data = 'fruitkha'; 
+$user = 'root'; 
+$pass = '';
 $chrs = 'utf8mb4';
 $attr = "mysql:host=$host;dbname=$data;charset=$chrs";
 $opts =
