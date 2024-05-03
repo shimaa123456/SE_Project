@@ -1,5 +1,5 @@
 // form validation 
-document.getElementById("submit").onclick = validate;
+//document.getElementById("submit").onclick = validate;
 var count = 0;
 
 function validate() {
@@ -17,8 +17,7 @@ function validate() {
     if (validateName(username) && validateEmail(email) && validatePhone(phone) && validateMessage(message)) {
         alert("Message sent successfully, ShimaaEssamDesign");
     }
-    
-    return false;
+
 }
 
 function validateName(username) {
