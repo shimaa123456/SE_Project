@@ -15,19 +15,21 @@
     <section>
         <div class="header">
             <header>
-                <a href="home.html" class="logo"><img src="../public/images/logo.png" alt="fruit logo" id="logo"></a>
+                <a href="../php/home.php" class="logo"><img src="../public/images/logo.png" alt="fruit logo"
+                        id="logo"></a>
                 <nav class="options">
-                    <a href="home.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="shop.html" style="color: orange">Shop</a>
-                    <a href="news.html">News</a>
+                    <a href="../php/home.php">Home</a>
+                    <a href="../php/about.php">About</a>
+                    <a href="../php/contact_insert.php">Contact</a>
+                    <a href="../php/shop.php" style="color: orange">Shop</a>
+                    <a href="../php/news.php">News</a>
                 </nav>
                 <div>
-                    <a href="order.html"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="../php/order.php"><i class="fas fa-shopping-cart"></i></a>
                 </div>
                 <div>
-                    <a href=""><i class="fas fa-search"></i></a>
+                    <a href="../php/login.php"><i class="fas fa-sign-in-alt"></i></a>
+
                 </div>
             </header>
             <div class="Homepage">
@@ -49,11 +51,9 @@
             <img src="../public/images/product-img-4.jpg" name="myimg" id="sliderImg" alt="" width="400" height="200">
             <div>
                 <button onclick="nextfunction();">next</button>
-
                 <button onclick=" startfunction();" style="width:120px;">slide show</button>
                 <button id="pause" onclick="stopfunction();">stop</button>
                 <button onclick="prevfunction();">previous</button>
-
             </div>
         </div>
         <!-- the end of slider section -->
@@ -71,34 +71,79 @@
         <div class="row">
             <div class="strawberry">
                 <figure>
-                    <img src="../public/images/st.jpg" alt=" strawberry img" width="300px" height="200px">
+                    <img src="../public/images/st.jpg" alt="Strawberry img" width="300px" height="200px">
                     <figcaption>
                         <h2><b>Strawberry</b></h2>
-                        <p>per Kg </p>
-                        <h2> 85 &dollar;</h2>
-                        <p class="cart">Add to Cart</p>
+                        <p>Per Kg</p>
+                        <h2>$85</h2>
+                        <form action="shop.php" method="post">
+                            <input type="hidden" name="name" value="Strawberry">
+                            <input type="hidden" name="price" value="85">
+                            <input type="hidden" name="image" value="../public/images/st.jpg">
+                            <input type="submit" value="Add to Cart" style=" display: block;
+                            margin: 0 auto;
+                            background-color: #F28123; /* Button color */
+                            color: white; /* Text color */
+                            border: none;
+                            padding: 10px 20px;
+                            margin-bottom: 40px;
+                            border-radius: 5px;
+                            text-align: center;
+                            text-decoration: none;
+                            cursor: pointer;">
+                        </form>
                     </figcaption>
                 </figure>
             </div>
             <div class="Berry">
                 <figure>
-                    <img src="../public/images/berry img.jpg" alt="berry img" width="300px" height="200px">
+                    <img src="../public/images/berry img.jpg" alt="Berry img" width="300px" height="200px">
                     <figcaption>
                         <h2><b>Berry</b></h2>
-                        <p>per Kg </p>
-                        <h2> 70 &dollar;</h2>
-                        <p class="cart">Add to Cart</p>
+                        <p>Per Kg</p>
+                        <h2>$70</h2>
+                        <form action="shop.php" method="post">
+                            <input type="hidden" name="name" value="Berry">
+                            <input type="hidden" name="price" value="70">
+                            <input type="hidden" name="image" value="../public/images/berry img.jpg">
+                            <input type="submit" value="Add to Cart" style=" display: block;
+                            margin: 0 auto;
+                            background-color: #F28123; /* Button color */
+                            color: white; /* Text color */
+                            border: none;
+                            padding: 10px 20px;
+                            margin-bottom: 40px;
+                            border-radius: 5px;
+                            text-align: center;
+                            text-decoration: none;
+                            cursor: pointer;">
+                        </form>
                     </figcaption>
                 </figure>
             </div>
             <div class="lemon">
                 <figure>
-                    <img src="../public/images/lemon.jpg" alt=" Lemon img" width="300px" height="200px">
+                    <img src="../public/images/lemon.jpg" alt="Lemon img" width="300px" height="200px">
                     <figcaption>
                         <h2>Lemon</h2>
-                        <p>per Kg </p>
-                        <h2> 35 &dollar;</h2>
-                        <p class="cart">Add to Cart</p>
+                        <p>Per Kg</p>
+                        <h2>$35</h2>
+                        <form action="shop.php" method="post">
+                            <input type="hidden" name="name" value="Lemon">
+                            <input type="hidden" name="price" value="35">
+                            <input type="hidden" name="image" value="../public/images/lemon.jpg">
+                            <input type="submit" value="Add to Cart" style=" display: block;
+                            margin: 0 auto;
+                            background-color: #F28123; /* Button color */
+                            color: white; /* Text color */
+                            border: none;
+                            padding: 10px 20px;
+                            margin-bottom: 40px;
+                            border-radius: 5px;
+                            text-align: center;
+                            text-decoration: none;
+                            cursor: pointer;">
+                        </form>
                     </figcaption>
                 </figure>
             </div>
@@ -106,37 +151,85 @@
         <div class="row">
             <div class="strawberry">
                 <figure>
-                    <img src="../public/images/product-img-4.jpg" alt=" strawberry img" width="300px" height="200px">
+                    <img src="../public/images/product-img-4.jpg" alt="Strawberry img" width="300px" height="200px">
                     <figcaption>
                         <h2><b>Avocado</b></h2>
-                        <p>per Kg </p>
-                        <h2> 50 &dollar;</h2>
-                        <p class="cart">Add to Cart</p>
+                        <p>Per Kg</p>
+                        <h2>$50</h2>
+                        <form action="shop.php" method="post">
+                            <input type="hidden" name="name" value="Avocado">
+                            <input type="hidden" name="price" value="50">
+                            <input type="hidden" name="image" value="../public/images/product-img-4.jpg">
+                            <input type="submit" value="Add to Cart" style=" display: block;
+                            margin: 0 auto;
+                            background-color: #F28123; /* Button color */
+                            color: white; /* Text color */
+                            border: none;
+                            padding: 10px 20px;
+                            margin-bottom: 40px;
+                            border-radius: 5px;
+                            text-align: center;
+                            text-decoration: none;
+                            cursor: pointer;">
+                        </form>
                     </figcaption>
                 </figure>
             </div>
             <div class="Berry">
                 <figure>
-                    <img src="../public/images/product-img-5.jpg" alt="berry img" width="300px" height="200px">
+                    <img src="../public/images/product-img-5.jpg" alt="Green Apple img" width="300px" height="200px">
                     <figcaption>
                         <h2><b>Green Apple</b></h2>
-                        <p>per Kg </p>
-                        <h2> 45 &dollar;</h2>
-                        <p class="cart">Add to Cart</p>
+                        <p>Per Kg</p>
+                        <h2>$45</h2>
+                        <form action="shop.php" method="post">
+                            <input type="hidden" name="name" value="Green Apple">
+                            <input type="hidden" name="price" value="45">
+                            <input type="hidden" name="image" value="../public/images/product-img-5.jpg">
+                            <input type="submit" value="Add to Cart" style=" display: block;
+                            margin: 0 auto;
+                            background-color: #F28123; /* Button color */
+                            color: white; /* Text color */
+                            border: none;
+                            padding: 10px 20px;
+                            margin-bottom: 40px;
+                            border-radius: 5px;
+                            text-align: center;
+                            text-decoration: none;
+                            cursor: pointer;">
+                        </form>
                     </figcaption>
                 </figure>
             </div>
             <div class="lemon">
                 <figure>
-                    <img src="../public/images/product-img-6.jpg" alt=" Lemon img" width="300px" height="200px">
+                    <img src="../public/images/product-img-6.jpg" alt="Strawberry img" width="300px" height="200px">
                     <figcaption>
                         <h2>Strawberry</h2>
-                        <p>per Kg </p>
-                        <h2> 80 &dollar;</h2>
-                        <p class="cart">Add to Cart</p>
+                        <p>Per Kg</p>
+                        <h2>$80</h2>
+                        <form action="shop.php" method="post">
+                            <input type="hidden" name="name" value="Strawberry2">
+                            <input type="hidden" name="price" value="80">
+                            <input type="hidden" name="image" value="../public/images/product-img-6.jpg">
+                            <input type="submit" value="Add to Cart" style=" display: block;
+                            margin: 0 auto;
+                            background-color: #F28123; /* Button color */
+                            color: white; /* Text color */
+                            border: none;
+                            padding: 10px 20px;
+                            margin-bottom: 40px;
+                            border-radius: 5px;
+                            text-align: center;
+                            text-decoration: none;
+                            cursor: pointer;">
+                        </form>
                     </figcaption>
                 </figure>
             </div>
+        </div>
+        <div class="row">
+            <!-- Add more products here -->
         </div>
         <div class="row">
             <div class=" text-center">
@@ -144,7 +237,7 @@
                     <ul>
                         <li><a href="">Prev</a></li>
                         <li><a href="">1</a></li>
-                        <li ><a class="active" href="" style="background-color:rgb(218, 91, 45); color: azure;">2</a></li>
+                        <li><a class="active" href="" style="background-color:rgb(218, 91, 45); color: azure;">2</a></li>
                         <li><a href="">3</a></li>
                         <li><a href="">Next</a></li>
                     </ul>
@@ -184,11 +277,11 @@
 
             <ul>
 
-                <li> <a href="home.html"><i class="fas fa-angle-right"></i>Home</a></li>
-                <li> <a href="about.html"> <i class="fas fa-angle-right"></i>About</a></li>
-                <li> <a href="shop.html"><i class="fas fa-angle-right"></i>Shop</a></li>
-                <li> <a href="news.html"><i class="fas fa-angle-right"></i>News</a></li>
-                <li> <a href="contact.html"><i class="fas fa-angle-right"></i>Contact</a></li>
+                <li> <a href="../php/home.php"><i class="fas fa-angle-right"></i>Home</a></li>
+                <li> <a href="../php/about.php"> <i class="fas fa-angle-right"></i>About</a></li>
+                <li> <a href="../php/shop.php"><i class="fas fa-angle-right"></i>Shop</a></li>
+                <li> <a href="../php/news.php"><i class="fas fa-angle-right"></i>News</a></li>
+                <li> <a href="../php/contact_insert.php"><i class="fas fa-angle-right"></i>Contact</a></li>
             </ul>
 
 
